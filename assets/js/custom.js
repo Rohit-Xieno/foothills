@@ -15,7 +15,8 @@ const closeIcon = document.getElementById('closeIcon');
 // })
 
 mobileMenuIcon.addEventListener('click', function(){
-  mainMenu.style.display = "flex";
+  // mainMenu.style.display = "flex";
+  mainMenu.classList.toggle('active');
   mobileMenuIcon.classList.toggle('active');
   // menuIcon.style.display = "none";
   // closeIcon.style.display = "block";

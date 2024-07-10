@@ -1,12 +1,15 @@
 .container{
   @apply max-w-[1200px] pl-[20px] pr-[20px] m-auto
 }
+// *{
+//   outline: 1px solid red;
+// }
 .header-menus{
   ul{
     li{
-      @apply mr-[45px];
+      @apply xl:mr-[45px] mr-[35px];
       a{
-        @apply text-sm tracking-[1.05px] font-bold text-[#0F2A34]
+        @apply text-sm tracking-[1.05px] font-bold text-[#0F2A34] py-[20px]
       }
     }
     .menu-item-has-children{
@@ -15,7 +18,12 @@
         @apply block
       }
       ul.sub-menu{
-        @apply absolute left-0 top-10 bg-white rounded-[10px] p-5 hidden
+        @apply absolute left-0 top-10 bg-white rounded-[10px] p-5 hidden shadow-lg mb-1;
+        li{
+          a{
+            @apply block py-[5px];
+          }
+        }
       }
     }
   }
@@ -68,69 +76,16 @@
     overflow: hidden;
    }
 
-  //  .container--tabs {
-  //   margin: 2rem;
-  // }
-  // .container--tabs .nav-tabs {
-  //   // float: left;
-  //   width: 100%;
-  //   margin: 0;
-  //   list-style-type: none;
-  //   border-bottom: 1px solid #ddd;
-  // }
-  // .container--tabs .nav-tabs > li {
-  //   // float: left;
-  //   margin-bottom: -1px;
-  // }
-  // .container--tabs .nav-tabs > li > a {
-  //   // float: left;
-  //   margin-right: 2px;
-  //   line-height: 1.42857143;
-  //   padding: 20px;
-  //   border: 1px solid transparent;
-  //   border-radius: 4px 4px 0 0;
-  // }
-  // .container--tabs .nav-tabs > li > a:hover {
-  //   border-color: #eee #eee #ddd;
-  // }
-  // .container--tabs .nav-tabs > li.active > a,
-  // .container--tabs .nav-tabs > li.active > a:hover,
-  // .container--tabs .nav-tabs > li.active > a:focus {
-  //   color: #555;
-  //   cursor: default;
-  //   background-color: #fff;
-  //   border: 1px solid #ddd;
-  //   border-bottom-color: transparent;
-  //   display: inline-block;
-  // }
-  // .container--tabs .tab-content {
-  //   // float: left;
-  //   width: 100%;
-  // }
-  // .container--tabs .tab-content > .tab-pane {
-  //   display: none;
-  // }
-  // .container--tabs .tab-content > .tab-pane.active {
-  //   display: block;
-  //   padding: 2.5% 3.5%;
-  //   background-color: #efefef;
-  // }
-  // .container--tabs .tab-content > .active {
-  //   display: block;
-  // }
-
 
   .container--tabs {
     .nav-tabs {
       & > li {
         & > a {
-          @apply p-5 tracking-[1.5];
+          @apply pt-[34px] pb-5 tracking-[1.5px] text-blue-dark;
         }
       }
     }
     .tab-content {
-      // @apply w-full p-10;
-
       & > .tab-pane {
         @apply hidden;
         &.active {
@@ -142,37 +97,22 @@
       }
     }
   }
-  // .container--tabs .nav-tabs > li.active > a,
-  //   .container--tabs .nav-tabs > li.active > a:hover,
-  //   .container--tabs .nav-tabs > li.active > a:focus {
-  //   color: #555;
-  //   cursor: default;
-  //   background-color: #fff;
-
-  // }
 
 .container--tabs{
   .nav-tabs{
     li{
+      a{
+        @apply block font-semibold text-center text-blue-dark opacity-[0.4];
+      }
       & > .active{
         a{
-          @apply border-b-aqua-dark;
+          @apply border-b-aqua-dark text-blue-dark opacity-100;
         }
-      }
-      a{
-        @apply text-blue-dark block font-semibold text-center;
       }
     }
   }
 }
 
-
-  // .container--tabs .nav-tabs > li > a{
-  //   @apply text-blue-dark block font-semibold text-center;
-  // }
-  // .container--tabs .nav-tabs > li.active > a{
-  //   @apply border-b-aqua-dark
-  // }
   .container--tabs .nav-tabs > li:first-child > a{
     @apply rounded-tl-[50px]
   }
@@ -180,18 +120,42 @@
     @apply rounded-tr-[50px]
   }
   .container--tabs .nav-tabs > li.active{
-    @apply border-b-4 border-solid border-aqua-dark
+    @apply border-b-4 border-solid border-aqua-dark;
+  }
+  .container--tabs .nav-tabs > li.active a{
+    @apply opacity-100;
   }
 
   .green-h3{
     @apply text-lg text-green-dark font-semibold mt-[60px] mb-[30px]
   }
 
+
   // media query
-  @media(max-width: 767px){
+  // @media(min-width: 1280px){
+    // .header-menus{
+    //   ul{
+    //     li{
+    //       @apply mr-[25px]
+    //     }
+    //   }
+    // }
+  // }
+
+  @media(max-width: 1024px){
+
+  // }
+
+  // @media(max-width: 991px){
     // #mainMenu{
     //   @apply hidden;
     // }
+    .menu-part{
+      @apply hidden;
+    }
+    .menu-part.active{
+      @apply flex;
+    }
     #menu-main-menu{
       @apply flex flex-col
     }
@@ -199,9 +163,9 @@
       ul{
         @apply pt-10;
         li{
-          @apply mr-0 text-center;
+          @apply mr-0;
           a{
-            @apply p-4 block
+            @apply py-4 block
           }
         }
       }

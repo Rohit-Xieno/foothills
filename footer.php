@@ -15,20 +15,20 @@ $cochrane_kindergarten_hours = get_field('cochrane_kindergarten_hours', 'option'
 $quick_links_heading = get_field('quick_links_heading', 'option');
 ?>
 <div class="main-footer bg-yellow-light">
-<footer class="footer bg-blue-dark text-white md:pt-[82px] pt-[65px] pb-[60px] md:rounded-tr-[200px] md:rounded-tl-[200px] rounded-tr-[100px] rounded-tl-[100px]">
+<footer class="footer bg-blue-dark text-white lg:pt-[82px] pt-[65px] pb-[60px] xl:rounded-tr-[200px] xl:rounded-tl-[200px] rounded-tr-[100px] rounded-tl-[100px]">
 <div class="container">
   <div class="row flex md:flex-nowrap flex-wrap">
-    <div class="footer-logo md:w-[54px] w-full md:text-left text-center md:mr-[46px] md:mb-0 mb-[65px]">
+    <div class="footer-logo md:w-[54px] w-full md:text-left text-center lg:mr-[46px] mr-[30px] mr-0 md:mb-0 mb-[65px]">
       <?php if(!empty($footer_logo)): ?>
-      <img class="w-[54px] md:mx-none mx-auto" src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>">
+      <img class="w-[54px] lg:mx-none mx-auto" src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>">
       <?php endif; ?>
     </div>
-    <div class="inner-row w-full flex md:flex-nowrap flex-wrap md:gap-[140px] gap-[60px]">
-    <div class="col contact md:min-w-[160px] min-w-full">
+    <div class="inner-row w-full flex md:flex-row flex-col xl:gap-[140px] lg:gap-[80px] gap-[40px]">
+    <div class="col contact md:max-w-[160px] max-w-[360px]">
       <?php if(!empty($contact_heading)): ?>
         <h2 class="text-sm tracking-[1.05px] uppercase font-medium"><?php echo $contact_heading; ?></h2>
       <?php endif; ?>
-      <div class="main-phone-wrap md:block flex md:flex-wrap flex-nowrap md:gap-0 gap-10">
+      <div class="main-phone-wrap flex md:flex-col flex-row md:gap-0 gap-10">
       <div class="phone-wrap">
       <?php if(!empty($school_phone)): ?>
         <h3 class="text-xs font-medium mb-[20px] mt-[30px]"><?php echo $school_phone; ?></h3>
@@ -51,11 +51,11 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
       </div>
       </div>
     </div>
-    <div class="col hours md:min-w-[360px] min-w-full">
+    <div class="col hours max-w-[360px]">
     <?php if(!empty($schools_hours_heading)): ?>
       <h2 class="text-sm tracking-[1.05px] uppercase font-medium"><?php echo $schools_hours_heading; ?></h2>
     <?php endif; ?>
-    <div class="grid grid-cols-2 gap-[40px]">
+    <div class="grid grid-cols-2 gap-[20px]">
       <div class="calgary">
         <?php if(!empty($calgary_heading)): ?>
           <h3 class="text-xs font-medium mb-[20px] mt-[30px]"><?php echo $calgary_heading; ?></h3>

@@ -20,5 +20,8 @@ Page Module list
   <?php elseif (get_row_layout() == 'program_location') :  ?>
   <?php get_template_part('partials/modules/module', 'program_location'); ?>
 
+  <?php elseif (get_row_layout() == 'resume') :  ?>
+  <?php get_template_part('partials/modules/module', 'resume'); ?>
+
   <?php endif; ?>
 <?php endwhile; ?>

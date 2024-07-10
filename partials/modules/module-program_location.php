@@ -3,37 +3,47 @@
 Module Name: Program Location
 */
 
+$program_location_heading = get_sub_field('program_location_heading');
 $program_registration_heading = get_sub_field('program_registration_heading');
 $program_registration_link = get_sub_field('program_registration_cta');
 $registration_information_heading = get_sub_field('registration_information_heading');
 ?>
-<section class="program-location">
+<section class="program-location pt-[100px]">
 <div class="container">
-  <h2>Program Locations</h2>
+  <?php if(!empty($program_location_heading)): ?>
+  <h2 class="text-[25px] font-semibold mb-[35px]"><?= $program_location_heading; ?></h2>
+  <?php endif; ?>
   <div class="row">
     <div class="container--tabs border border-solid border-[#DEDEDC] rounded-[50px]">
     <div class="row">
       <ul class="nav nav-tabs grid grid-cols-2">
-        <li class="active"><a href="#tab-1">CALGARY VILLAGE SQUARE</a></li>
-        <li class=""><a href="#tab-2">COCHRANE</a></li>
+        <li class="active"><a href="#tab-1" class="text-[12px]">CALGARY VILLAGE SQUARE</a></li>
+        <li class=""><a href="#tab-2" class="text-[12px]">COCHRANE</a></li>
       </ul>
-      <div class="tab-content pt-[60px] p-10">
+      <div class="tab-content pt-[60px] md:p-10 p-5">
         <div id="tab-1" class="tab-pane active">
           <span class="glyphicon glyphicon-leaf glyphicon--home--feature two columns text-center"></span>
           <span class="col-md-10">
+            <?php if(!empty($program_registration_heading)): ?>
             <h3 class="text-xl mb-[30px]"><?= $program_registration_heading; ?></h3>
+            <?php endif; ?>
+            <?php if(!empty($program_registration_link)): ?>
             <?php
               if( $program_registration_link ):
                   $link_url = $program_registration_link['url'];
                   $link_title = $program_registration_link['title'];
-                  $link_target = $program_registration_link['target'] ? $link['target'] : '_self';
+                  $link_target = $program_registration_link['target'] ? $program_registration_link['target'] : '_self';
                   ?>
                   <a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
               <?php endif; ?>
+              <?php endif; ?>
+
           </span>
-          <h3 class="green-h3"><?= $registration_information_heading; ?></h3>
+          <?php if(!empty($registration_information_heading)): ?>
+            <h3 class="green-h3"><?= $registration_information_heading; ?></h3>
+          <?php endif; ?>
           <?php if( have_rows('program_registration_info_repeater') ): ?>
-            <div class="inner-row grid grid-cols-2 gap-[25px]">
+            <div class="inner-row grid md:grid-cols-2 grid-cols-1 gap-[25px]">
               <?php while( have_rows('program_registration_info_repeater') ): the_row();
                   $registration_heading = get_sub_field('registration_heading');
                   $registration_content = get_sub_field('registration_content');
@@ -47,34 +57,85 @@ $registration_information_heading = get_sub_field('registration_information_head
           <?php endif; ?>
           <div class="inner-row">
             <?php
+              $class_month_heading = get_sub_field('class_month_heading');
+              $class_month_content = get_sub_field('class_month_content');
               $class_time_heading = get_sub_field('class_time_heading');
-              $class_time_content = get_sub_field('class_time_content');
+              $class_time_text = get_sub_field('class_time_text');
             ?>
-            <h3 class="green-h3"><?= $class_time_heading; ?></h3>
-            <div>September 2023<br> Morning Class:<br> Mon – Thu 8:30 – 11:40 am</div>
+            <?php if(!empty($registration_information_heading)): ?>
+              <h3 class="green-h3"><?= $class_month_heading; ?></h3>
+            <?php endif; ?>
+            <?php if(!empty($class_month_content)): ?>
+            <div class="mb-[20px]"><?= $class_month_content; ?></div>
+            <?php endif; ?>
+            <?php if(!empty($class_time_heading)): ?>
+            <h4 class="font-medium"><?= $class_time_heading; ?></h4>
+            <?php endif; ?>
+            <div><?= $class_time_text; ?></div>
           </div>
           <div class="inner-row">
-            <h3 class="green-h3">Parent Resources</h3>
-            <div class="download-btns">
-              <a href="#" class="btn">DOWNLOAD PARENT HAND BOOK</a>
-              <a href="#" class="btn">DOWNLOAD KINDERGARTEN CALENDAR</a>
-            </div>
+            <?php
+              $parent_resources_heading = get_sub_field('parent_resources_heading');
+              ?>
+            <h3 class="green-h3"><?= $parent_resources_heading; ?></h3>
+            <?php if( have_rows('download_btn_repeater') ): ?>
+              <div class="download-btns">
+                <?php while( have_rows('download_btn_repeater') ): the_row();
+                    $download_btn_link = get_sub_field('download_btn');
+                    if( $download_btn_link ):
+                      $link_url = $download_btn_link['url'];
+                      $link_title = $download_btn_link['title'];
+                      $link_target = $download_btn_link['target'] ? $download_btn_link['target'] : '_self';
+                    ?>
+                    <a class="btn !inline-flex mr-[20px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><img class="ml-[11px]" src="<?= get_template_directory_uri().'/assets/images/download-arrow.svg' ?>" alt=""></a>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
           </div>
           <div class="inner-row">
-            <h3>Class Time</h3>
+            <?php
+            $class_time_links_heading = get_sub_field('class_time_links_heading');
+            ?>
+            <?php if(!empty($class_time_links_heading)): ?>
+              <h3 class="green-h3"><?= $class_time_links_heading ?></h3>
+            <?php endif; ?>
+            <?php if( have_rows('class_time_links_repeater') ): ?>
             <div class="links">
-              <a href="#">Routine Vaccination Schedule, Alberta Health</a>
-              <a href="#">Alberta Education Kindergarten Curriculum</a>
+              <?php while( have_rows('class_time_links_repeater') ): the_row();
+              $class_time_link = get_sub_field('class_time_link');
+                if( $class_time_link ):
+                  $link_url = $class_time_link['url'];
+                  $link_title = $class_time_link['title'];
+                  $link_target = $class_time_link['target'] ? $class_time_link['target'] : '_self';
+                ?>
+              <a class="block text-base text-aqua-dark underline mb-[10px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
+              <?php endwhile; ?>
             </div>
+            <?php endif; ?>
           </div>
-          <div class="inner-section bg-aqua-light rounded-[30px] py-[53px] px-10 flex">
-            <div class="img-box max-w-[404px]">
-              <img src="" alt="">
+          <div class="inner-section mt-[80px] bg-aqua-light rounded-[30px] py-[53px] px-10 flex items-center gap-[56px]">
+            <?php $meet_teacher_image = get_sub_field('meet_teacher_image'); if(!empty($meet_teacher_image)): ?>
+            <div class="img-box max-w-[404px] relative before:absolute before:left-[130px] before:top-[-20px] before:w-[40px] before:h-[40px] before:bg-aqua-dark before:rounded-[6px] before:rotate-45 after:absolute after:bottom-[-53px] after:bg-[url(../assets/images/meet-bottom-img.svg)]  after:bg-no-repeat after:bg-[85%] after:w-full after:h-[105px]">
+              <img class="rounded-[200px]" src="<?= esc_url( $meet_teacher_image['url'] ) ?>" alt="<?= esc_attr($meet_teacher_image['alt']) ?>">
             </div>
+            <?php endif; ?>
             <div class="content max-w-[444px]">
-              <h3>MEET THE TEACHER</h3>
-              <h2>Hayley Sloan</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo</p>
+              <?php
+                $meet_teacher_heading = get_sub_field('meet_teacher_heading');
+                $meet_teacher_sub_heading = get_sub_field('meet_teacher_sub_heading');
+                $meet_teacher_content = get_sub_field('meet_teacher_content');
+              ?>
+              <?php if(!empty($meet_teacher_heading)): ?>
+              <h3 class="text-sm tracking-[1.05px] font-semibold text-blue-dark mb-[12px]"><?= $meet_teacher_heading; ?></h3>
+              <?php endif; ?>
+              <?php if(!empty($meet_teacher_sub_heading)): ?>
+              <h2 class="text-[30px] font-semibold text-aqua-dark mb-[25px]"><?= $meet_teacher_sub_heading; ?></h2>
+              <?php endif; ?>
+              <?php if(!empty($meet_teacher_content)): ?>
+              <p><?= $meet_teacher_content; ?></p>
+              <?php endif; ?>
             </div>
           </div>
         </div>

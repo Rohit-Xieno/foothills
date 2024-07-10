@@ -13,15 +13,13 @@
   <div class="container">
     <div class="row flex m-auto justify-between align-center">
       <div class="logo md:max-w-full max-w-[105px]"> <a href=""><?php the_custom_logo(); ?></a> </div>
-      <div class="mobile-menu md:opacity-0 opacity-100 z-20" id="mobileMenuIcon">
-        <!-- <img src="</?= get_template_directory_uri().'/assets/images/menu-bar.svg'; ?>" alt="" class="w-[20px]" id="menuIcon">
-        <img src="</?= get_template_directory_uri().'/assets/images/close-icon.svg'; ?>" alt="" class="w-[30px] hidden" id="closeIcon"> -->
+      <div class="mobile-menu lg:opacity-0 opacity-100 z-20" id="mobileMenuIcon">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </div>
-      <div class="menu-part md:flex md:flex-row md:static md:bg-transparent md:h-auto items-center md:p-0 flex-col hidden fixed top-0 left-0 right-0 bg-white h-full p-[15px]" id="mainMenu">
-      <div class="header-menus">
+      <div class="menu-part flex lg:flex-row lg:static lg:bg-transparent lg:h-auto items-center lg:p-0 flex-col fixed top-0 left-0 right-0 bg-white h-full lg:p-0 p-[35px]" id="mainMenu">
+      <div class="header-menus w-full">
         <?php
           wp_nav_menu( array(
             'menu'           => 'Main Menu', // Do not fall back to first non-empty menu.
@@ -31,8 +29,8 @@
           ) )
           ?>
       </div>
-      <div class="register-btn md:mt-0 mt-5">
-        <a href="#" class="btn">REGISTER</a>
+      <div class="register-btn lg:mt-0 lg:w-auto w-full mt-auto flex items-end flex-1">
+        <a href="#" class="btn lg:w-auto w-full">REGISTER</a>
       </div>
       </div>
     </div>
