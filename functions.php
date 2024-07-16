@@ -58,7 +58,7 @@ function custom_breadcrumb() {
   if ( is_category() || is_single() ) {
   the_category( ' / ' );
   if ( is_single() ) {
-  echo ' / ';
+  echo '  ';
   the_title();
   }
   } elseif ( is_page() ) {
@@ -78,4 +78,3 @@ function custom_breadcrumb() {
  }
 
 
- 

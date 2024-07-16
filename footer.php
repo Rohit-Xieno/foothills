@@ -14,7 +14,7 @@ $cochrane_preschool_hours = get_field('cochrane_preschool_hours', 'option');
 $cochrane_kindergarten_hours = get_field('cochrane_kindergarten_hours', 'option');
 $quick_links_heading = get_field('quick_links_heading', 'option');
 ?>
-<div class="main-footer bg-yellow-light">
+<div class="main-footer <?php if(is_page('home')) {echo 'bg-yellow-light';} ?>">
 <footer class="footer bg-blue-dark text-white lg:pt-[82px] pt-[65px] pb-[60px] xl:rounded-tr-[200px] xl:rounded-tl-[200px] rounded-tr-[100px] rounded-tl-[100px]">
 <div class="container">
   <div class="row flex md:flex-nowrap flex-wrap">

@@ -6,9 +6,9 @@
   .btn{
     @apply md:py-[22px] md:px-[33px] rounded-[30px] bg-[#F26851] py-[18px] px-[33px] text-[#FFDD52] text-[13px] tracking-[0.97px] leading-[15px] font-bold shadow-[0_1px_6px_rgba(0,0,0,0.15)] inline-block text-center
   }
-  .btn:hover{
-    @apply 
-  }
+  // .btn:hover{
+  //   @apply
+  // }
   .hero-p{
     @apply md:text-xl text-base text-[#0F2A34] md:max-w-[360px] my-10 mx-auto
   }
