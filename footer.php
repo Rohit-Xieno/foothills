@@ -24,7 +24,7 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
       <?php endif; ?>
     </div>
     <div class="inner-row w-full flex md:flex-row flex-col xl:gap-[140px] lg:gap-[80px] gap-[40px]">
-    <div class="col contact md:max-w-[160px] max-w-[360px]">
+    <div class="col contact md:max-w-[160px] max-w-[360px] w-full">
       <?php if(!empty($contact_heading)): ?>
         <h2 class="text-sm tracking-[1.05px] uppercase font-medium"><?php echo $contact_heading; ?></h2>
       <?php endif; ?>
@@ -51,11 +51,11 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
       </div>
       </div>
     </div>
-    <div class="col hours max-w-[360px]">
+    <div class="col hours lg:max-w-[360px] max-w-[300px] w-full">
     <?php if(!empty($schools_hours_heading)): ?>
       <h2 class="text-sm tracking-[1.05px] uppercase font-medium"><?php echo $schools_hours_heading; ?></h2>
     <?php endif; ?>
-    <div class="grid grid-cols-2 gap-[20px]">
+    <div class="grid grid-cols-2 xl:gap-[40px] gap-[20px]">
       <div class="calgary">
         <?php if(!empty($calgary_heading)): ?>
           <h3 class="text-xs font-medium mb-[20px] mt-[30px]"><?php echo $calgary_heading; ?></h3>
@@ -113,7 +113,7 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
     </div>
   </div>
   </div>
-  <div class="row pt-[82px] md:pl-[100px] pl-0">
+  <div class="row pt-[82px] lg:pl-[100px] md:pl-[78px] pl-0">
     <div class="copyright">
     <?php if( have_rows('copyright_links_repeater', 'option') ): ?>
     <ul class="flex">

@@ -87,7 +87,7 @@ $registration_information_heading = get_sub_field('registration_information_head
                       $link_title = $download_btn_link['title'];
                       $link_target = $download_btn_link['target'] ? $download_btn_link['target'] : '_self';
                     ?>
-                    <a class="btn !inline-flex mr-[20px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><img class="ml-[11px]" src="<?= get_template_directory_uri().'/assets/images/download-arrow.svg' ?>" alt=""></a>
+                    <a class="btn !inline-flex md:mr-[20px] md:text-center !text-left md:mb-[0] mb-[30px] !text-xs mr-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><img class="ml-[11px]" src="<?= get_template_directory_uri().'/assets/images/download-arrow.svg' ?>" alt=""></a>
                     <?php endif; ?>
                 <?php endwhile; ?>
                 </div>
@@ -115,13 +115,13 @@ $registration_information_heading = get_sub_field('registration_information_head
             </div>
             <?php endif; ?>
           </div>
-          <div class="inner-section mt-[80px] bg-aqua-light rounded-[30px] py-[53px] px-10 flex items-center gap-[56px]">
+          <div class="inner-section mt-[80px] bg-aqua-light rounded-[30px] py-[53px] md:px-10 px-5 flex md:flex-nowrap flex-wrap items-center gap-[56px]">
             <?php $meet_teacher_image = get_sub_field('meet_teacher_image'); if(!empty($meet_teacher_image)): ?>
             <div class="img-box max-w-[404px] relative before:absolute before:left-[130px] before:top-[-20px] before:w-[40px] before:h-[40px] before:bg-aqua-dark before:rounded-[6px] before:rotate-45 after:absolute after:bottom-[-53px] after:bg-[url(../assets/images/meet-bottom-img.svg)]  after:bg-no-repeat after:bg-[85%] after:w-full after:h-[105px]">
               <img class="rounded-[200px]" src="<?= esc_url( $meet_teacher_image['url'] ) ?>" alt="<?= esc_attr($meet_teacher_image['alt']) ?>">
             </div>
             <?php endif; ?>
-            <div class="content max-w-[444px]">
+            <div class="content max-w-[444px] md:mt-[0] mt-[42px]">
               <?php
                 $meet_teacher_heading = get_sub_field('meet_teacher_heading');
                 $meet_teacher_sub_heading = get_sub_field('meet_teacher_sub_heading');

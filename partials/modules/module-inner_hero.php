@@ -47,8 +47,17 @@ $inner_hero_content = get_sub_field('inner_hero_content');
         <h2 class="heading-h2 font-semibold text-aqua-dark mb-[30px]"><?= $inner_hero_heading; ?></h2>
       <?php endif; ?>
       <?php if(!empty($inner_hero_content)): ?>
-      <div class="inner-hero-content"><?= $inner_hero_content; ?></div>
+        <div class="inner-hero-content"><?= $inner_hero_content; ?></div>
       <?php endif; ?>
+      <?php
+        $link = get_sub_field('inner_hero_bottom_section');
+        if( $link ):
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <a class="btn mt-[18px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <?php endif; ?>
     </div>
   </div>
 </section>
