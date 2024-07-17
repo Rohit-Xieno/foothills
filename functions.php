@@ -40,6 +40,8 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
+add_theme_support( 'post-thumbnails' );
+
 // enqueue custom js
 function one_scripts(){
   $theme_version = wp_get_theme()->get('Version');

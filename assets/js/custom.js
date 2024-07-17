@@ -1,3 +1,5 @@
+
+
 const mobileMenuIcon = document.getElementById('mobileMenuIcon');
 const mainMenu = document.getElementById('mainMenu');
 const menuIcon = document.getElementById('menuIcon');
@@ -56,3 +58,6 @@ window.addEventListener("load", function() {
 		myTabs[i].addEventListener("click", myTabClicks)
 	}
 });
+
+
+

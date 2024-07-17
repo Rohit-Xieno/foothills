@@ -32,5 +32,11 @@ Page Module list
   <?php elseif (get_row_layout() == 'step_text_media') :  ?>
   <?php get_template_part('partials/modules/module', 'step_text_media'); ?>
 
+  <?php elseif (get_row_layout() == 'signup') :  ?>
+  <?php get_template_part('partials/modules/module', 'signup'); ?>
+
+  <?php elseif (get_row_layout() == 'top_inner_hero') :  ?>
+  <?php get_template_part('partials/modules/module', 'top_inner_hero'); ?>
+
   <?php endif; ?>
 <?php endwhile; ?>

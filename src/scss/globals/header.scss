@@ -137,12 +137,7 @@
   }
 
 
-  // media query
-  // @media(max-width: 1440px){
-  //   .text_with_media{
-  //     @apply !pt-[350px] before:top-[50px]
-  //   }
-  // }
+
   .style1{
     .col{
       &:first-child{
@@ -162,6 +157,75 @@
       }
     }
   }
+
+  .page-id-305, .page-id-371{
+    .maskk{
+      -webkit-mask-image: none;
+     -webkit-mask-size: contain;
+     -webkit-mask-position:center;
+     -webkit-mask-repeat: no-repeat;
+     mask-image: none;
+   mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    aspect-ratio: unset;
+    object-position: unset;
+    object-fit: unset;
+    width: auto;
+    overflow: visible;
+    }
+    .inner-hero-img::before{
+      display: none;
+    }
+    .inner-hero-img{
+      @apply lg:-right-24 lg:top-[150px] -right-16 top-[45%] lg:max-w-[467px] max-w-[280px] lg:translate-y-0 translate-y-[-50%]
+    }
+    .inner-hero-top-section{
+      @apply pb-[50px]
+    }
+    // .inner-hero-bottom-section{
+    //   @apply pb-[90px]
+    // }
+  }
+  .page-id-371 {
+    @apply overflow-x-hidden;
+    .main-inner{
+      @apply overflow-visible;
+    }
+    .card-main{
+      @apply lg:pt-10 pb-[100px] pt-28;
+    }
+    .inner-hero-img{
+      @apply lg:-right-24 lg:top-[150px] -right-16 top-[95%] lg:max-w-[467px] max-w-[280px] translate-y-0
+    }
+  }
+
+  .toolbox-program-form .select2-container--default .select2-selection--single {
+    height: 35px;
+    border-radius: 0px;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    --tw-border-opacity: 1;
+    border-bottom-color: rgb(196 196 194 / var(--tw-border-opacity));
+    padding-bottom: 0.625rem;
+}
+.toolbox-program-form .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  background: url(../assets/images/down-arrow-5.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: -8px;
+  margin-left: -8px;
+  display: block;
+  height: 22px;
+  width: 22px;
+
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
+}
+
 
   @media(max-width: 1024px){
 

@@ -3,7 +3,7 @@
 Module Name: Image Excerpt Card
 */
 ?>
-<div class="card-main md:pt-[120px] pt-20 <?php if(is_page( 254 )) {echo 'md:pt-0';} ?>">
+<div class="card-main relative md:pt-[120px] pt-20 <?php if(is_page( 254 )) {echo 'md:pt-0';} ?>">
 <?php
  $card_main_heading = get_sub_field('card_main_heading');
   $card_type = get_sub_field('childcare_style_type');
@@ -24,14 +24,14 @@ Module Name: Image Excerpt Card
 <div class="container">
   <div class="row">
     <?php if(have_rows('card_repeater')): ?>
-      <div class="grid md:grid-cols-3 grid-cols-1 md:gap-[40px] gap-[94px]">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[94px]">
       <?php while(have_rows('card_repeater')) : the_row();
       $card_img_style1 = get_sub_field('card_image');
       $card_heading_style1 = get_sub_field('card_heading');
       $card_content_style1 = get_sub_field('card_content');
       $card_link = get_sub_field('card_link');
       ?>
-      <div class="col">
+      <div class="group col">
           <figure class="image text-center">
               <a class="inline-block" href="<?php echo $card_link; ?>" >
                 <?php if(!empty($card_img_style1)): ?>
@@ -42,7 +42,7 @@ Module Name: Image Excerpt Card
               </a>
           </figure>
         <?php if(!empty($card_heading_style1)): ?>
-          <h3 class="mt-10 mb-[12px] text-[25px] font-semibold text-blue-dark">
+          <h3 class="mt-10 mb-[12px] text-[25px] font-semibold text-blue-dark group-hover:text-orange-dark">
             <a href="<?php echo $card_link; ?>" ><?= $card_heading_style1; ?></a>
           </h3>
         <?php endif; ?>
@@ -72,7 +72,7 @@ elseif ($card_type == 'style2'):
       $card_content_style1 = get_sub_field('card_content');
       $card_link = get_sub_field('card_link');
       ?>
-      <div class="col flex flex-col h-full rounded-[50px]">
+      <div class="group col flex flex-col h-full rounded-[50px]">
           <figure class="image basis-[250px] grow-0 shrink-0 h-[250px] rounded-tl-[50px] rounded-tr-[50px] overflow-hidden">
           <a href="<?php echo $card_link; ?>" >
             <?php if(!empty($card_img_style1)): ?>
@@ -82,9 +82,9 @@ elseif ($card_type == 'style2'):
             <?php endif; ?>
           </a>
           </figure>
-        <div class="content-box h-full px-8 py-9 rounded-bl-[50px] rounded-br-[50px] border border-t-0 border-[#00000029] border-solid">
+        <div class="content-box bg-white h-full px-8 py-9 rounded-bl-[50px] rounded-br-[50px] border border-t-0 border-[#00000029] border-solid">
           <?php if(!empty($card_heading_style1)): ?>
-            <h3 class="mb-[20px] text-[25px] font-semibold text-blue-dark">
+            <h3 class="mb-[20px] text-[25px] font-semibold text-blue-dark group-hover:text-orange-dark">
               <a href="<?php echo $card_link; ?>" ><?= $card_heading_style1; ?></a>
             </h3>
           <?php endif; ?>
@@ -109,22 +109,22 @@ else:
 <div class="container">
   <div class="row">
     <?php if(have_rows('card_repeater')): ?>
-      <div class="grid md:grid-cols-3 grid-cols-1 md:gap-[40px] gap-[94px]">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[40px]">
       <?php while(have_rows('card_repeater')) : the_row();
       $card_img_style1 = get_sub_field('card_image');
       $card_heading_style1 = get_sub_field('card_heading');
       $card_content_style1 = get_sub_field('card_content');
       $card_link = get_sub_field('card_link');
       ?>
-      <div class="col rounded-[50px]">
-      <div class="content-box px-8 py-9 rounded-tl-[50px] rounded-tr-[50px] border border-b-0 border-[#00000029] border-solid">
+      <div class="group col flex flex-col h-full rounded-[50px]">
+      <div class="content-box bg-white h-full px-8 py-9 rounded-tl-[50px] rounded-tr-[50px] border border-b-0 border-[#00000029] border-solid">
           <?php if(!empty($card_heading_style1)): ?>
-            <h3 class="mb-[20px] text-[25px] font-semibold text-blue-dark">
+            <h3 class="mb-[20px] text-[25px] font-semibold text-blue-dark group-hover:text-orange-dark">
             <a href="<?php echo $card_link; ?>" ><?= $card_heading_style1; ?></a>
             </h3>
           <?php endif; ?>
         </div>
-          <figure class="image h-[250px] rounded-bl-[50px] rounded-br-[50px] overflow-hidden">
+          <figure class="image basis-[250px] grow-0 shrink-0 h-[250px] rounded-bl-[50px] rounded-br-[50px] overflow-hidden">
             <a href="<?php echo $card_link; ?>" >
               <?php if(!empty($card_img_style1)): ?>
                 <img class="mx-auto w-full h-full object-cover" src="<?= esc_url($card_img_style1['url']); ?>" alt="<?= esc_attr($card_img_style1['alt']); ?>">
