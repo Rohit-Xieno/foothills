@@ -14,18 +14,18 @@ $text_media_orientation = get_sub_field('text_media_orientation');
 <div class="container-fluid">
   <div class="row flex md:flex-row flex-col lg:gap-[70px] gap-[50px] items-center <?php if($text_media_orientation == 0) { echo 'md:flex-row-reverse'; } ?>">
     <figure class="max-w-[700px] ">
-          <?php if(!empty($text_media_img)): ?>
-          <img class="<?= $text_media_orientation == 0 ? 'rounded-tl-full rounded-bl-full' : 'rounded-tr-full rounded-br-full'; ?>" src="<?= esc_url($text_media_img['url']); ?>" alt="<?= esc_attr($text_media_img['alt']); ?>">
-          <?php else: ?>
-            <img src="https://placehold.co/700x453" alt="">
+        <?php if(!empty($text_media_img)): ?>
+        <img class="<?= $text_media_orientation == 0 ? 'rounded-tl-full rounded-bl-full' : 'rounded-tr-full rounded-br-full'; ?>" src="<?= esc_url($text_media_img['url']); ?>" alt="<?= esc_attr($text_media_img['alt']); ?>">
+        <?php else: ?>
+          <img src="https://placehold.co/700x453" alt="">
           <?php endif; ?>
-        </figure>
+      </figure>
     <div class="content-col max-w-[518px] pr-5 md:pl-0 pl-5 <?php if($text_media_orientation == 0) { echo 'md:pr-0 pr-5 md:pl-5'; } ?>">
-    <?php if(!empty($text_media_img)): ?>
-      <h2 class="heading-h2 font-semibold"><?= $text_media_heading; ?></h2>
+    <?php if(!empty($text_media_heading)): ?>
+      <h2 class="heading-h2 font-semibold mb-5"><?= $text_media_heading; ?></h2>
     <?php endif; ?>
-    <?php if(!empty($text_media_img)): ?>
-      <p class="mt-5 mb-[30px] max-w-[444px]"><?= $text_media_content; ?></p>
+    <?php if(!empty($text_media_content)): ?>
+      <p class=" mb-[30px] max-w-[444px]"><?= $text_media_content; ?></p>
     <?php endif; ?>
     <?php
       $text_media_link = get_sub_field('text_media_link');

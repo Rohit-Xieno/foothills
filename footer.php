@@ -20,7 +20,7 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
   <div class="row flex md:flex-nowrap flex-wrap">
     <div class="footer-logo md:w-[54px] w-full md:text-left text-center lg:mr-[46px] mr-[30px] mr-0 md:mb-0 mb-[65px]">
       <?php if(!empty($footer_logo)): ?>
-      <img class="w-[54px] lg:mx-none mx-auto" src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>">
+      <a href="<?= home_url(); ?>"><img class="w-[54px] lg:mx-none mx-auto" src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>"></a>
       <?php endif; ?>
     </div>
     <div class="inner-row w-full flex md:flex-row flex-col xl:gap-[140px] lg:gap-[80px] gap-[40px]">
@@ -51,7 +51,7 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
       </div>
       </div>
     </div>
-    <div class="col hours lg:max-w-[360px] max-w-[300px] w-full">
+    <div class="col hours lg:max-w-[360px] md:max-w-[300px] max-w-[360px] w-full">
     <?php if(!empty($schools_hours_heading)): ?>
       <h2 class="text-sm tracking-[1.05px] uppercase font-medium"><?php echo $schools_hours_heading; ?></h2>
     <?php endif; ?>
@@ -139,19 +139,6 @@ $quick_links_heading = get_field('quick_links_heading', 'option');
 </footer>
 </div>
 <?php wp_footer(); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-  (function($)
- {
-    "use strict";
-    $(document).ready(function() {
-			$('.js-example-basic-single').select2({
-				placeholder: 'Select One'
-			});
 
-    });
-})(this.jQuery);
-</script>
 </body>
 </html>

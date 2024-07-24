@@ -10,10 +10,10 @@ Module Name: Image Excerpt Card
   ?>
 
 
-<section class="mb-[40px]">
+<section class="">
   <div class="container">
     <?php if(!empty($card_main_heading)): ?>
-      <h3 class="heading-h3 font-semibold"><?= $card_main_heading; ?></h3>
+      <h3 class="heading-h3 font-semibold mb-[40px]"><?= $card_main_heading; ?></h3>
     <?php endif; ?>
   </div>
 </section>
@@ -32,7 +32,7 @@ Module Name: Image Excerpt Card
       $card_link = get_sub_field('card_link');
       ?>
       <div class="group col">
-          <figure class="image text-center">
+          <figure class="image text-center mb-10">
               <a class="inline-block" href="<?php echo $card_link; ?>" >
                 <?php if(!empty($card_img_style1)): ?>
                   <img class="mx-auto h-full object-cover" src="<?= esc_url($card_img_style1['url']); ?>" alt="<?= esc_attr($card_img_style1['alt']); ?>">
@@ -42,7 +42,7 @@ Module Name: Image Excerpt Card
               </a>
           </figure>
         <?php if(!empty($card_heading_style1)): ?>
-          <h3 class="mt-10 mb-[12px] text-[25px] font-semibold text-blue-dark group-hover:text-orange-dark">
+          <h3 class=" mb-[12px] text-[25px] font-semibold text-blue-dark group-hover:text-orange-dark">
             <a href="<?php echo $card_link; ?>" ><?= $card_heading_style1; ?></a>
           </h3>
         <?php endif; ?>

@@ -5,6 +5,7 @@
  */
 
 $signup_heading = get_sub_field('signup_heading');
+$signup_heading_inner = get_sub_field('signup_heading_inner');
 $signup_date = get_sub_field('signup_date');
 $signup_duration = get_sub_field('signup_duration');
 $signup_delivery = get_sub_field('signup_delivery');
@@ -21,9 +22,13 @@ $signup_orientation = get_sub_field('signup_orientation');
  ?>
 <section class="module-signup md:py-[104px] py-[50px]">
   <div class="container">
-    <h3 class="text-h4 sm:text-h3 mb-[40px] font-semibold"><?php echo $signup_heading; ?></h3>
+    <div class="row">
+    <?php if(!empty($signup_heading)): ?>
+      <h3 class="text-h4 sm:text-h3 mb-[40px] font-semibold"><?php echo $signup_heading; ?></h3>
+    <?php endif; ?>
     <div class="rounded-[50px] border border-[#DEDEDC] py-[40px] pr-5 md:py-[60px] md:pr-[100px]">
-      <div class="grid md:grid-cols-2 md:gap-10 lg:flex lg:gap-[100px]">
+      <!-- <div class="grid md:grid-cols-2 md:gap-10 lg:flex lg:gap-[100px]"> -->
+      <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[100px] md:gap-10">
         <div class="max-w-[499px]">
           <?php
             $signup_img = get_sub_field('signup_image');
@@ -31,8 +36,11 @@ $signup_orientation = get_sub_field('signup_orientation');
                 <img src="<?php echo esc_url($signup_img['url']); ?>" alt="<?php echo esc_attr($signup_img['alt']); ?>" class="rounded-br-full rounded-tr-full" />
           <?php endif; ?>
         </div>
-        <div class="max-w-[459px] pl-5 pt-5 md:pl-0 md:pt-0">
+        <div class="max-w-[459px] w-full pl-5 pt-5 md:pl-0 md:pt-0">
           <div class="">
+            <?php if(!empty($signup_heading_inner)): ?>
+              <h2 class="heading-h2 font-semibold pb-[10px]"><?= $signup_heading_inner; ?></h2>
+            <?php endif; ?>
             <?php if($signup_date) { ?>
             <div class="signup-date"><span class="font-medium">Start Date: </span><?php echo $signup_date; ?></div>
             <?php } ?>
@@ -45,7 +53,7 @@ $signup_orientation = get_sub_field('signup_orientation');
             <h3 class="text-lg font-semibold text-green-dark mt-5 mb-4"><?php echo $signup_time; ?></h3>
             <h4 class="text-sm font-normal mb-[16px]"><?php echo $signup_session_time; ?></h4>
             <div class="toolbox-program-form">
-            <select class="js-example-basic-single w-full" name="state">
+            <select class="js-example-basic-single !w-full" name="state">
             <?php
               // Check rows exists.
               if( have_rows('signup_time_select') ):
@@ -76,6 +84,7 @@ $signup_orientation = get_sub_field('signup_orientation');
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <?php
@@ -84,12 +93,19 @@ $signup_orientation = get_sub_field('signup_orientation');
 
 ?>
 <section class="module-signup pb-[80px]">
-  <div class="max-w-site-inner mx-auto px-5 xl:px-0">
-    <h3 class="text-h4 sm:text-h3 mb-[40px] font-semibold"><?php echo $signup_heading; ?></h3>
+  <div class="container">
+    <div class="row">
+    <?php if(!empty($signup_heading)): ?>
+      <h3 class="text-h4 sm:text-h3 mb-[40px] font-semibold"><?php echo $signup_heading; ?></h3>
+    <?php endif; ?>
     <div class="rounded-[50px] border border-[#DEDEDC] py-[40px] pr-0 md:py-[64px] md:pl-[40px]">
-      <div class="grid md:grid-cols-2 md:gap-10 lg:flex lg:gap-[100px] justify-between">
-      <div class="max-w-[459px] pl-5 pt-0 pr-5 md:pl-0 md:pt-0">
+      <!-- <div class="grid md:grid-cols-2 md:gap-10 lg:flex lg:gap-[100px] justify-between"> -->
+      <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[100px] md:gap-10 justify-between">
+      <div class="max-w-[459px] w-full pl-5 pt-0 pr-5 md:pl-0 md:pt-0">
           <div class="">
+            <?php if(!empty($signup_heading_inner)): ?>
+              <h2 class="heading-h2 font-semibold pb-[10px]"><?= $signup_heading_inner; ?></h2>
+            <?php endif; ?>
             <?php if ($signup_date) { ?>
               <div class="signup-date"><span class="font-medium">Start Date: </span><?php echo $signup_date; ?></div>
             <?php } ?>
@@ -102,7 +118,7 @@ $signup_orientation = get_sub_field('signup_orientation');
             <h3 class="text-lg font-semibold text-green-dark mt-5 mb-4"><?php echo $signup_time; ?></h3>
             <h4 class="text-sm font-normal mb-[16px]"><?php echo $signup_session_time; ?></h4>
             <div class="toolbox-program-form">
-            <select class="js-example-basic-single w-full" name="state">
+            <select class="js-example-basic-single !w-full" name="state">
             <?php
               // Check rows exists.
               if( have_rows('signup_time_select') ):
@@ -140,6 +156,7 @@ $signup_orientation = get_sub_field('signup_orientation');
 
       </div>
     </div>
+  </div>
   </div>
 </section>
 <?php } ?>

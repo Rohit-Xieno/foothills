@@ -60,4 +60,35 @@ window.addEventListener("load", function() {
 });
 
 
+// Select all elements with the class 'menu-item-has-children'
+let menuItem = document.querySelectorAll('.menu-item-has-children');
+
+// Iterate over each 'menu-item-has-children' element
+menuItem.forEach(element => {
+    // Attach a click event listener to each 'menu-item-has-children' element
+    element.addEventListener('click', () => {
+        // Toggle the 'active-menu' class on the child '.sub-menu' element
+        let submenu = element.querySelector('.sub-menu');
+        if (submenu) {
+            submenu.classList.toggle('active-menu');
+            // Display an alert (this can be customized)
+            // alert('Sub-menu clicked!');
+        }
+    });
+});
+
+
+
+
+(function($)
+ {
+    "use strict";
+    $(document).ready(function() {
+			$('.js-example-basic-single').select2({
+				placeholder: 'Select One'
+			});
+
+    });
+})(this.jQuery);
+
 

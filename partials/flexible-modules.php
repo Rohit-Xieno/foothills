@@ -38,5 +38,14 @@ Page Module list
   <?php elseif (get_row_layout() == 'top_inner_hero') :  ?>
   <?php get_template_part('partials/modules/module', 'top_inner_hero'); ?>
 
+  <?php elseif (get_row_layout() == 'map_card') :  ?>
+  <?php get_template_part('partials/modules/module', 'map_card'); ?>
+
+  <?php elseif (get_row_layout() == 'contact_form') :  ?>
+  <?php get_template_part('partials/modules/module', 'contact_form'); ?>
+
+  <?php elseif (get_row_layout() == 'color_card') :  ?>
+  <?php get_template_part('partials/modules/module', 'color_card'); ?>
+
   <?php endif; ?>
 <?php endwhile; ?>

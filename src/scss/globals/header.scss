@@ -15,21 +15,38 @@
     li{
       @apply xl:mr-[45px] mr-[35px];
       a{
-        @apply text-sm tracking-[1.05px] font-bold text-[#0F2A34] py-[20px]
+        @apply text-sm tracking-[1.05px] font-bold text-[#0F2A34] py-[20px];
+      }
+      ul{
+        @apply z-10;
+        li{
+          @apply mr-0;
+          a{
+            @apply whitespace-nowrap font-medium hover:text-orange-hover;
+          }
+        }
+      }
+    }
+    li.current-menu-item{
+      a{
+        @apply text-orange-dark
       }
     }
     .menu-item-has-children{
       @apply relative;
       &:hover ul.sub-menu{
-        @apply block
+        @apply lg:block;
       }
       ul.sub-menu{
-        @apply absolute left-0 top-10 bg-white rounded-[10px] p-5 hidden shadow-lg mb-1;
+        @apply lg:absolute relative lg:left-0 lg:top-10 bg-white rounded-[10px] p-5 hidden shadow-lg mb-1;
         li{
           a{
             @apply block py-[5px];
           }
         }
+      }
+      ul.sub-menu.active-menu{
+        @apply block;
       }
     }
   }
@@ -38,9 +55,9 @@
   body{
     @apply font-['Montserrat']
   }
-  .home .breadcrumbs-container{
-    @apply hidden
-  }
+  // .home .breadcrumbs-container{
+  //   @apply hidden
+  // }
   .footer-links{
     @apply mt-[30px] mb-[60px];
     li{
@@ -193,13 +210,71 @@
       @apply overflow-visible;
     }
     .card-main{
-      @apply lg:pt-10 pb-[100px] pt-28;
+      @apply lg:pt-10 pb-[100px] pt-0;
     }
     .inner-hero-img{
       @apply lg:-right-24 lg:top-[150px] -right-16 top-[95%] lg:max-w-[467px] max-w-[280px] translate-y-0
     }
+
+  }
+  .single-team-member{
+    blockquote{
+      @apply text-[25px] font-semibold text-green-dark pl-[26px] border-l-4 border-green-dark my-[50px];
+    }
+    .content{
+      p{
+        @apply mb-10;
+      }
+    }
   }
 
+  .school-map{
+    iframe{
+      @apply rounded-bl-[50px] rounded-br-[50px];
+    }
+  }
+
+  .contact-form{
+    input.form-control{
+      @apply border-b border-solid border-b-[#C4C4C2] mt-[10px] py-[10px] w-full focus:outline-none focus:border-b-aqua-dark;
+    }
+
+    .textarea-row{
+      @apply mt-[60px] mb-[40px];
+      textarea{
+        @apply border-b border-solid border-b-[#C4C4C2] mt-[10px] py-[10px] w-full h-[120px] focus:outline-none focus:border-b-aqua-dark;
+      }
+    }
+
+    .wpcf7-acceptance{
+      label{
+        @apply flex gap-[17px];
+      }
+    }
+
+    .form-button{
+      @apply flex md:flex-row flex-col justify-between md:items-center md:gap-10 gap-[26px] mt-[30px] items-end;
+      input[type="submit"]{
+        @apply py-[22px] px-[42px];
+      }
+      .wpcf7-list-item{
+        @apply ml-0;
+      }
+      .form-btn-wrap{
+        p{
+          @apply flex flex-col;
+        }
+      }
+    }
+    .contact-checkbox{
+      @apply w-[20px] h-[20px] grow-0 shrink-0 basis-[20px] border border-solid border-[#707070] rounded-[5px];
+    }
+  }
+
+  .toolbox-program-form{
+    position: relative;
+    width: 100%;
+  }
   .toolbox-program-form .select2-container--default .select2-selection--single {
     height: 35px;
     border-radius: 0px;
@@ -224,6 +299,34 @@
   border-radius: 9999px;
   border-width: 1px;
   border-color: transparent;
+}
+.wpcf7-not-valid::placeholder{
+  color: #E50756;
+}
+.contact-form input.form-control.wpcf7-not-valid{
+  @apply border-b  border-b-[#E50756];
+}
+
+body .select2-hidden-accessible{
+  @apply w-full #{!important};
+}
+html, body{
+  @apply overflow-x-hidden;
+}
+.select2-container{
+  @apply w-full #{!important};
+}
+
+.link-text{
+  a{
+    @apply text-aqua-dark underline;
+  }
+}
+
+.page-id-484{
+  .module-signup{
+    @apply pt-0;
+  }
 }
 
 
@@ -250,11 +353,15 @@
         li{
           @apply mr-0;
           a{
-            @apply py-4 block
+            @apply py-4 block;
           }
+
         }
       }
     }
+
+
+
     #mobileMenuIcon{
       .line{
         @apply w-[20px] h-[2px] bg-[#0F2B34] opacity-100 mb-[5px];

@@ -46,7 +46,9 @@ add_theme_support( 'post-thumbnails' );
 function one_scripts(){
   $theme_version = wp_get_theme()->get('Version');
 
+  wp_enqueue_script( 'jquery-js', get_theme_file_uri( '/assets/js/jquery.min.js' ), array(), $theme_version, true );
   wp_enqueue_script( 'custom-js', get_theme_file_uri( '/assets/js/custom.js' ), array(), $theme_version, true );
+  wp_enqueue_script( 'select2-js', get_theme_file_uri( '/assets/js/select2.min.js' ), array(), $theme_version, true );
 }
 
 add_action( 'wp_enqueue_scripts', 'one_scripts' );

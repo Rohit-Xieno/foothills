@@ -14,10 +14,10 @@ $resume_link = get_sub_field('btn');
     <h2 class="heading-h2 mb-[35px] font-semibold"><?= $resume_heading; ?></h2>
     <?php endif; ?>
     <?php if(!empty($resume_content)): ?>
-    <p class="max-w-[924px]"><?= $resume_content; ?></p>
+    <p class="max-w-[924px] md:!mb-[60px] !mb-11"><?= $resume_content; ?></p>
     <?php endif; ?>
     <?php if(!empty($resume_subheading)): ?>
-    <h3 class="green-h3 md:!mt-[60px] !mt-11"><?= $resume_subheading; ?></h3>
+    <h3 class="green-h3 "><?= $resume_subheading; ?></h3>
     <?php endif; ?>
 
     <a href="#" class="btn">APPLY FOR GRANT</a>

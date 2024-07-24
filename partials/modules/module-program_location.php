@@ -6,7 +6,8 @@ Module Name: Program Location
 $program_location_heading = get_sub_field('program_location_heading');
 $program_registration_heading = get_sub_field('program_registration_heading');
 $program_registration_link = get_sub_field('program_registration_cta');
-$registration_information_heading = get_sub_field('registration_information_heading');
+$tabing_media_content_bg_color = get_sub_field('tabing_media_content_bg_color');
+$tabing_media_content_text_color = get_sub_field('tabing_media_content_text_color');
 ?>
 <section class="program-location pt-[100px]">
 <div class="container">
@@ -23,7 +24,7 @@ $registration_information_heading = get_sub_field('registration_information_head
       <div class="tab-content pt-[60px] md:p-10 p-5">
         <div id="tab-1" class="tab-pane active">
           <span class="glyphicon glyphicon-leaf glyphicon--home--feature two columns text-center"></span>
-          <span class="col-md-10">
+          <span class="col-md-10 mb-10 block">
             <?php if(!empty($program_registration_heading)): ?>
             <h3 class="text-xl mb-[30px]"><?= $program_registration_heading; ?></h3>
             <?php endif; ?>
@@ -115,7 +116,7 @@ $registration_information_heading = get_sub_field('registration_information_head
             </div>
             <?php endif; ?>
           </div>
-          <div class="inner-section mt-[80px] bg-aqua-light rounded-[30px] py-[53px] md:px-10 px-5 flex md:flex-nowrap flex-wrap items-center gap-[56px]">
+          <div class="inner-section mt-[80px] rounded-[30px] py-[53px] md:px-10 px-5 flex md:flex-nowrap flex-wrap items-center gap-[56px]" style="background-color: <?= $tabing_media_content_bg_color ?>;">
             <?php $meet_teacher_image = get_sub_field('meet_teacher_image'); if(!empty($meet_teacher_image)): ?>
             <div class="img-box max-w-[404px] relative before:absolute before:left-[130px] before:top-[-20px] before:w-[40px] before:h-[40px] before:bg-aqua-dark before:rounded-[6px] before:rotate-45 after:absolute after:bottom-[-53px] after:bg-[url(../assets/images/meet-bottom-img.svg)]  after:bg-no-repeat after:bg-[85%] after:w-full after:h-[105px]">
               <img class="rounded-[200px]" src="<?= esc_url( $meet_teacher_image['url'] ) ?>" alt="<?= esc_attr($meet_teacher_image['alt']) ?>">
@@ -131,7 +132,7 @@ $registration_information_heading = get_sub_field('registration_information_head
               <h3 class="text-sm tracking-[1.05px] font-semibold text-blue-dark mb-[12px]"><?= $meet_teacher_heading; ?></h3>
               <?php endif; ?>
               <?php if(!empty($meet_teacher_sub_heading)): ?>
-              <h2 class="text-[30px] font-semibold text-aqua-dark mb-[25px]"><?= $meet_teacher_sub_heading; ?></h2>
+              <h2 class="text-[30px] font-semibold mb-[25px]" style="color: <?= $tabing_media_content_text_color; ?>"><?= $meet_teacher_sub_heading; ?></h2>
               <?php endif; ?>
               <?php if(!empty($meet_teacher_content)): ?>
               <p><?= $meet_teacher_content; ?></p>

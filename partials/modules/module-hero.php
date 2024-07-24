@@ -47,7 +47,7 @@ if ($tone) {
       <?php
         $hero_text_img = get_sub_field('home_hero_text_image');
         if( !empty( $hero_text_img ) ): ?>
-            <img src="<?php echo esc_url($hero_text_img['url']); ?>" alt="<?php echo esc_attr($hero_text_img['alt']); ?>" class="md:max-w-full mx-auto max-w-[210px]" />
+            <img src="<?php echo esc_url($hero_text_img['url']); ?>" alt="<?php echo esc_attr($hero_text_img['alt']); ?>" class="md:max-w-full mx-auto mb-10 max-w-[210px]" />
         <?php endif; ?>
         <?php if( !empty( $hero_heading ) ): ?><h1 class="sr-only"><?php echo $hero_heading; ?></h1><?php endif; ?>
         <?php if(!empty($hero_text)): ?>

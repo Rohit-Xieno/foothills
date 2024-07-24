@@ -7,7 +7,8 @@ $discover_text_img = get_sub_field('discover_text_image');
 $discover_text = get_sub_field('discover_text');
 $discover_link = get_sub_field('discover_link');
 ?>
-<section class="bg-yellow-light pt-[100px] pb-[80px]">
+<?php if(!empty($discover_heading || $discover_text_img || $discover_text || $discover_link)): ?>
+<section class="bg-yellow-light pt-[100px] pb-[80px] relative before:absolute before:w-full md:before:h-[140px] before:h-[76px] before:bg-[url(../assets/images/cta-bg.png)] md:before:top-[-55px] before:top-[-32px] before:bg-repeat md:before:bg-[140px,140px] before:bg-[76px,76px]">
 <div class="container">
   <div class="row flex md:flex-nowrap flex-wrap md:gap-[117px] gap-[50px]">
     <?php if(!empty($discover_text_img)): ?>
@@ -17,10 +18,10 @@ $discover_link = get_sub_field('discover_link');
     <?php endif; ?>
     <div class="cta-content max-w-[507px]">
       <?php if(!empty($discover_heading)): ?>
-        <h2 class="heading-h2 text-orange-dark font-semibold"><?php echo $discover_heading; ?></h2>
+        <h2 class="heading-h2 text-orange-dark font-semibold md:mb-10 mb-[30px]"><?php echo $discover_heading; ?></h2>
       <?php endif; ?>
       <?php if(!empty($discover_text)): ?>
-        <p class="md:mt-10 md:mb-[30px] mt-[30px] mb-6"><?php echo $discover_text; ?></p>
+        <p class="md:mb-[30px] mb-6"><?php echo $discover_text; ?></p>
       <?php endif; ?>
       <?php
       if( $discover_link ):
@@ -34,3 +35,4 @@ $discover_link = get_sub_field('discover_link');
   </div>
 </div>
 </section>
+<?php endif; ?>
